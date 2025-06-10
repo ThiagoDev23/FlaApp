@@ -5,6 +5,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './Login';
 import Cadastro from './Cadastro';
+import RecuperaSenha from './RecuperaSenha';
+import HomePage from './HomePage';
 
 function HomeScreen({ navigation }) {
   return (
@@ -46,6 +48,8 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Cadastro" component={Cadastro} />
+        <Stack.Screen name="RecuperaSenha" component={RecuperaSenha} />
+        <Stack.Screen name="HomePage" component={HomePage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
