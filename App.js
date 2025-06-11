@@ -1,4 +1,3 @@
-import React from 'react';
 import { FlatList, StyleSheet, Text, StatusBar, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
@@ -7,6 +6,8 @@ import Login from './Login';
 import Cadastro from './Cadastro';
 import RecuperaSenha from './RecuperaSenha';
 import HomePage from './HomePage';
+import Artilharia from './Artilharia';
+import Perfil from './Perfil';
 
 function HomeScreen({ navigation }) {
   return (
@@ -50,6 +51,8 @@ export default function App() {
         <Stack.Screen name="Cadastro" component={Cadastro} />
         <Stack.Screen name="RecuperaSenha" component={RecuperaSenha} />
         <Stack.Screen name="HomePage" component={HomePage} />
+        <Stack.Screen name="Artilharia" component={Artilharia} />
+        <Stack.Screen name="Perfil" component={Perfil} />
       </Stack.Navigator>
     </NavigationContainer>
   );

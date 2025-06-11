@@ -1,4 +1,3 @@
-import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 const RecuperaSenha = ({ navigation }) => (
@@ -10,8 +9,7 @@ const RecuperaSenha = ({ navigation }) => (
       </Text>
     </TouchableOpacity>
     <Text style={styles.infoText}>
-      Enviamos um email para o endereço{'\n'}
-      <Text style={styles.emailText}>thiag*************24@gmail.com</Text> com um link{'\n'}
+      Enviamos para o seu endereço de email um link{'\n'}
       para você alterar sua senha !
     </Text>
     <TouchableOpacity
@@ -47,10 +45,6 @@ const styles = StyleSheet.create({
     marginTop: 24,
     marginBottom: 48,
     fontFamily: 'Roboto',
-  },
-  emailText: {
-    color: 'white',
-    fontWeight: 'bold',
   },
   button: {
     backgroundColor: '#CF1111',

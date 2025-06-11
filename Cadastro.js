@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, ScrollView, Alert } from 'react-native';
 
 const Cadastro = ({ navigation }) => {
@@ -8,14 +8,12 @@ const Cadastro = ({ navigation }) => {
   const [confirmaSenha, setConfirmaSenha] = useState('');
   const [dataNascimento, setDataNascimento] = useState('');
 
-  // Função para aceitar apenas números e formatar como DD/MM/AAAA
   const handleDataNascimento = (text) => {
-    // Remove tudo que não for número
+
     let onlyNumbers = text.replace(/[^0-9]/g, '');
-    // Limita a 8 dígitos
+  
     onlyNumbers = onlyNumbers.slice(0, 8);
 
-    // Formata como DD/MM/AAAA
     let formatted = onlyNumbers;
     if (onlyNumbers.length > 4) {
       formatted = onlyNumbers.replace(/(\d{2})(\d{2})(\d{0,4})/, '$1/$2/$3');
@@ -25,9 +23,8 @@ const Cadastro = ({ navigation }) => {
     setDataNascimento(formatted);
   };
 
-// Função para validar se a data é real (DD/MM/AAAA)
 function dataValida(data) {
-  // data no formato DD/MM/AAAA
+
   const partes = data.split('/');
   if (partes.length !== 3) return false;
   const [dia, mes, ano] = partes.map(Number);
@@ -35,12 +32,11 @@ function dataValida(data) {
     !dia || !mes || !ano ||
     dia < 1 || mes < 1 || mes > 12 || ano < 1900 || ano > 2025
   ) return false;
-  // Verifica dias do mês
+
   const diasNoMes = new Date(ano, mes, 0).getDate();
   return dia <= diasNoMes;
 }
 
-  // Validação simples dos campos
 const camposPreenchidos = () => {
   const dataNum = dataNascimento.replace(/[^0-9]/g, '');
   return (
@@ -59,7 +55,7 @@ const camposPreenchidos = () => {
       Alert.alert('Erro', 'Preencha todos os campos corretamente!');
       return;
     }
-    // Aqui você pode adicionar a lógica de cadastro com Firebase futuramente
+    // Firebase 
     navigation.navigate('Home');
   };
 

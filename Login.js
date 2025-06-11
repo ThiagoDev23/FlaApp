@@ -22,7 +22,7 @@ const Login = ({ navigation }) => {
       Alert.alert('Erro', 'Preencha todos os campos!');
       return;
     }
-    // Aqui você pode adicionar a lógica de autenticação com Firebase futuramente
+    // Firebase 
     navigation.navigate('HomePage');
   };
 
